@@ -1,8 +1,3 @@
-# Configure the PagerDuty provider
-provider "pagerduty" {
-  token = var.pagerduty_token
-}
-
 # Create a PagerDuty team
 resource "pagerduty_team" "tf_team_local1" {
   name        = "tf_team_local1"
