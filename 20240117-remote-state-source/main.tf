@@ -29,8 +29,12 @@ resource "pagerduty_escalation_policy" "tf_remote_state_main_ep" {
   rule {
     escalation_delay_in_minutes = 10
     target {
-      type = "user_schedule"
+      type = "schedule_reference"
       id   = pagerduty_schedule.tf_remote_state_primary_schedule.id
     }
   }
+}
+
+output "tf_remote_state_main_ep_id" {
+  value = pagerduty_escalation_policy.tf_remote_state_main_ep.id
 }
